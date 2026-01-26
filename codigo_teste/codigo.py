@@ -29,13 +29,15 @@ class ListaDeTarefas:
             if tarefa.id == identificador:
                 if nome:
                     tarefa.nome = nome
+                if status is not None:
+                    tarefa.status == status
                 break
 
     def deletar_tarefa(self, identificador: int) -> None:
         for tarefa in self.tarefas:
             if tarefa.id == identificador:
                 self.tarefas.remove(tarefa)
-            break
+                break
 
     def mostrar_tarefa(self, identificador: int) -> Tarefa | None:
         for tarefa in self.tarefas:
