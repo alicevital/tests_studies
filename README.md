@@ -24,3 +24,12 @@ https://apidog.com/pt/blog/e2e-testing-pt/
 https://docs.pytest.org/en/stable/
 
 https://www.datacamp.com/pt/tutorial/pytest-tutorial-a-hands-on-guide-to-unit-testing
+
+## Conceitos sobre JWT
+base64 - módulo da biblioteca padrão python para codificação e decodificação Base64
+JWT - biblioteca pyJWT para criar, assinar e validar tokens. Funções principais: jwt.encode() - cria token, jwt.decode() - verifica token
+Chave - Segredo usado para assinar o JWT
+Algoritmo - Algoritmo da assinatura, combina header + payload + chave
+
+jwt.encode(payload, chave, algorithm) - converte payload para JSON, codifica header e payload em Base64 URL-safe, gera assinatura usando a chave, retorna uma string JWT: header.payload.signature
+
