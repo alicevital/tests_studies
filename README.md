@@ -24,3 +24,10 @@ https://apidog.com/pt/blog/e2e-testing-pt/
 https://docs.pytest.org/en/stable/
 
 https://www.datacamp.com/pt/tutorial/pytest-tutorial-a-hands-on-guide-to-unit-testing
+
+
+O pytest só reconhece automaticamente marcas como:
+skip
+xfail
+parametrize
+slow (em alguns plugins)
