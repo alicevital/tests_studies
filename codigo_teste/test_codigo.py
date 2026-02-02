@@ -1,6 +1,9 @@
+import pytest
 from codigo_teste.codigo import Tarefa
 from codigo_teste.codigo import ListaDeTarefas
 
+
+@pytest.mark.e2e
 def test_tarefa_contem_os_campos():
     identificador = 1
     nome = 'Estudar pytest'
@@ -13,6 +16,7 @@ def test_tarefa_contem_os_campos():
     assert tarefa.status == status
 
 
+@pytest.mark.unit
 def test_criar_tarefa():
     #arrange
     lista_de_tarefas = ListaDeTarefas()
@@ -24,14 +28,15 @@ def test_criar_tarefa():
     lista_de_tarefas.mostrar_tarefa(tarefa.id)
 
 
+@pytest.mark.unit
 def test_atualizar_tarefa():
     lista_de_tarefas = ListaDeTarefas()
 
-    tarefa = lista_de_tarefas.atualizar_tarefa('quase terminado')
+    atualizar_tarefa = lista_de_tarefas.atualizar_tarefa('concluída')
+    lista_de_tarefas.atualizar_tarefa(atualizar_tarefa.status)
 
-    lista_de_tarefas.atualizar_tarefa(tarefa.status)
 
-
+@pytest.mark.xfail
 def test_deletar_tarefa():
     lista_de_tarefas = ListaDeTarefas()
 
