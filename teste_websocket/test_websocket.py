@@ -13,7 +13,7 @@ async def websocket_client():
 @pytest.mark.asyncio
 async def test_websocket_connection(websocket_client):
     assert websocket_client.state is State.OPEN
-    if websocket_client.state is State.OPEN:
+    if websocket_client.state is open():
         logging.info("Cliente enviando: OK")
         await websocket_client.send("OK")
 
