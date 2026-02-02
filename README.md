@@ -46,3 +46,25 @@ jwt.encode(payload, chave, algorithm) - converte payload para JSON, codifica hea
 ## Diferença entre __eq__ | is | ==
 
 Os operadores __eq__, ‘is’ e == em Python são usados para comparar a igualdade de objetos em Python. O método __eq__ verifica a igualdade de objetos da mesma classe ou se queremos fazer uma função de comparação personalizada. O operador ‘is’ verifica a localização da memória dos dois objetos, enquanto o operador == verifica apenas o valor dos dois objetos que estão sendo comparados.
+
+### comandos
+
+pytest -m slow - roda apenas esse teste marcado como slow
+pytest -m "not slow" - exclui esse teste da execução
+
+### marcações comuns no pytest:
+
+@pytest.mark.skip - sempre pula esse teste marcado como skip
+@pytest.mark.skipif - pula o teste se a condição for verdadeira
+@pytest.mark.xfail - indica que o teste é esperado falhar
+
+### Marcações customizadas
+
+@pytest.mark.integration
+pytest -m integration
+
+### Configurar no pytest.ini 
+
+[pytest]
+markers = 
+    integration: testes de integração -> isso evita warnings
