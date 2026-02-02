@@ -42,3 +42,7 @@ Chave - Segredo usado para assinar o JWT
 Algoritmo - Algoritmo da assinatura, combina header + payload + chave
 
 jwt.encode(payload, chave, algorithm) - converte payload para JSON, codifica header e payload em Base64 URL-safe, gera assinatura usando a chave, retorna uma string JWT: header.payload.signature
+
+## Diferença entre __eq__ | is | ==
+
+Os operadores __eq__, ‘is’ e == em Python são usados para comparar a igualdade de objetos em Python. O método __eq__ verifica a igualdade de objetos da mesma classe ou se queremos fazer uma função de comparação personalizada. O operador ‘is’ verifica a localização da memória dos dois objetos, enquanto o operador == verifica apenas o valor dos dois objetos que estão sendo comparados.
